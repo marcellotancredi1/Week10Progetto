@@ -1,0 +1,23 @@
+
+  <input type="text" [(ngModel)]="task"  id="todolist" placeholder="add todos..." >
+
+
+ <form>
+
+  <button type="submit" (click)="addTodo()"> Aggiungi ToDo</button>
+ </form>
+
+
+<div *ngFor="let todo of todolist">
+ <p><label for="checkbox">  {{todo.id}} {{todo.title}} {{todo.completed}}
+</label></p>
+
+  <input type="checkbox" [checked]="todo.completed" (change)="todo.completed = !todo.completed" />
+</div>
+
+<div>
+  <a href="#" routerLink="/completed">Publish</a>
+</div>
+
+
+
